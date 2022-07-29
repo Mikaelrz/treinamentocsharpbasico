@@ -13,10 +13,10 @@ namespace CursoGitHub.InterfaceConsole
             /*
              * Main - principal
              * O método inicia-se com aletra maiuscula
-             * 
+             *  
              */
             //Variável
-            /*
+            /*                      
              * É um espaço reservado na memória
              */
             /*Tipos de dados
@@ -36,14 +36,9 @@ namespace CursoGitHub.InterfaceConsole
             
             
             string resposta = "git remote add origin";
-            Console.WriteLine("Qual o comando para iniciar git?");
+            Console.WriteLine("Qual o comando para adicionar repositório remoto?");
             comando = Console.ReadLine();
             string[] subcomando = comando.Split(' ');
-            foreach (var item in subcomando)
-            {
-                Console.WriteLine(item);
-            }
-
             if (comando.Equals(resposta))                                                                                                                                                                                                                                                                        
             {
                 Console.WriteLine("acertou");
@@ -52,10 +47,30 @@ namespace CursoGitHub.InterfaceConsole
             {
                 Console.WriteLine("errou");
             }
-            Console.WriteLine($"A resposta é {resposta}");
-            Console.WriteLine("Alô Mundo"!");
-            Console.ReadKey();
 
-        }//Fim do método
+            foreach (var item in subcomando)
+            {
+                if (subcomando.Length < 2)
+                {
+                    Console.WriteLine("poxa você nem lembra dos comandos");
+                    break;
+                }
+                else if (subcomando.Length == 2)
+                {
+                    pontos = 50.00;
+                }
+                else
+                {
+                    pontos = 100.00;
+                }
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine($"A resposta é {resposta}");
+            string resultadoFinal = pontos > 50 ? "elogio" : "continue tentando";
+            Console.WriteLine($"Você obteve {pontos} e teve o resultado {resultadoFinal}");
+            Console.ReadKey();
+        
+        }//Fim do método 
     }//Fim da classe
 }//fim do namespace
